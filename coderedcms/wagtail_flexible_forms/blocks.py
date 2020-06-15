@@ -88,7 +88,7 @@ class TextFieldBlock(OptionalFormFieldBlock):
 class NumberFieldBlock(OptionalFormFieldBlock):
     default_value = CharBlock(required=False, label=_('Default value'))
 
-    widget = forms.NumberInput
+    widget = forms.NumberInput(attrs={'min': '0', 'max': '100', 'step': '0.0001'})
 
     class Meta:
         label = _('Number field')
